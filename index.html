@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Andrej Müller – Beratung in der Energiewirtschaft. Markteintritt, Vertriebsaufbau, Schulungen. Berlin.">
+  <meta name="author" content="müllers büro – Andrej Müller">
+  <title>müllers büro – Andrej Müller</title>
+
+  <!-- Favicon (inline SVG, matches Logo) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 38'%3E%3Crect width='38' height='38' rx='9' fill='%232E5E3E'/%3E%3Cpolyline points='8,27 8,14 14,20 19,11 24,20 30,14 30,27' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='30' cy='27' r='2.5' fill='%23C8952A'/%3E%3C/svg%3E">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="müllers büro – Andrej Müller">
+  <meta property="og:description" content="Beratung in der Energiewirtschaft. Markteintritt, Vertriebsaufbau, Schulungen. Berlin.">
+  <meta property="og:url" content="https://www.muellers-buero.online/">
+  <meta property="og:image" content="https://www.muellers-buero.online/og-image.png">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="müllers büro – Andrej Müller">
+  <meta name="twitter:description" content="Beratung in der Energiewirtschaft. Markteintritt, Vertriebsaufbau, Schulungen. Berlin.">
+  <meta name="twitter:image" content="https://www.muellers-buero.online/og-image.png">
+
+  <!-- Schriftarten lokal (DSGVO-konform, keine externe Verbindung) -->
+  <link rel="stylesheet" href="fonts.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FAF8F5;
+      color: #1C1C1C;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── BACKGROUND DECORATION ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 90% -10%, rgba(46,94,62,.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at -10% 80%, rgba(184,130,42,.06) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 40% at 50% 110%, rgba(46,94,62,.04) 0%, transparent 60%);
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 79px,
+          rgba(0,0,0,.025) 79px,
+          rgba(0,0,0,.025) 80px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 79px,
+          rgba(0,0,0,.025) 79px,
+          rgba(0,0,0,.025) 80px
+        );
+    }
+
+    nav, .hero, section, footer { position: relative; z-index: 1; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Lora', serif;
+      font-size: 18px;
+      color: #1C1C1C;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+    }
+
+    .nav-cta {
+      font-size: 14px;
+      font-weight: 500;
+      color: #2E5E3E;
+      border-bottom: 1px solid #2E5E3E;
+      padding-bottom: 1px;
+      transition: opacity .2s;
+    }
+    .nav-cta:hover { opacity: .6; }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 72px 48px 96px;
+    }
+
+    .hero-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #2E5E3E;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(36px, 5vw, 62px);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -.02em;
+      color: #1C1C1C;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: #2E5E3E;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: #666;
+      max-width: 520px;
+      margin-bottom: 40px;
+      line-height: 1.75;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2E5E3E;
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    .btn:hover { background: #245032; }
+
+    /* ── DIVIDER ── */
+    hr {
+      border: none;
+      border-top: 1px solid #E5E0D8;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ── ÜBER ── */
+    .about {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #999;
+      padding-top: 6px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: #1C1C1C; font-weight: 600; }
+
+    /* ── LEISTUNGEN ── */
+    .leistungen {
+      background: #2E5E3E;
+      padding: 80px 48px;
+    }
+
+    .leistungen-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .leistungen .section-label { color: rgba(255,255,255,.45); }
+
+    .leistungen-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .litem {
+      background: rgba(255,255,255,.06);
+      padding: 28px 24px;
+      transition: background .2s;
+    }
+    .litem:hover { background: rgba(255,255,255,.10); }
+
+    .litem-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .litem-text {
+      font-size: 13.5px;
+      color: rgba(255,255,255,.55);
+      line-height: 1.65;
+    }
+
+    /* ── KONTAKT ── */
+    .contact {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-info { }
+
+    .contact-info h2 {
+      font-family: 'Lora', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #1C1C1C;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .contact-info p {
+      font-size: 14.5px;
+      color: #666;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cd-item { }
+    .cd-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 3px;
+    }
+    .cd-value {
+      font-size: 14.5px;
+      color: #1C1C1C;
+    }
+    .cd-value a { color: #2E5E3E; border-bottom: 1px solid transparent; transition: border-color .2s; }
+    .cd-value a:hover { border-color: #2E5E3E; }
+
+    /* form */
+    .contact-form { }
+
+    .fg { margin-bottom: 16px; }
+    .fg label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 7px;
+      letter-spacing: .02em;
+    }
+    .fg input, .fg select, .fg textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid #DDD8D0;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #1C1C1C;
+      background: #fff;
+      outline: none;
+      transition: border-color .2s;
+      appearance: none;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus {
+      border-color: #2E5E3E;
+    }
+    .fg textarea { resize: vertical; min-height: 100px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .btn-form {
+      width: 100%;
+      padding: 13px;
+      background: #2E5E3E;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 4px;
+      transition: background .2s;
+    }
+    .btn-form:hover { background: #245032; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid #E5E0D8;
+      padding: 36px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .imp {
+      font-size: 12px;
+      color: #999;
+      line-height: 1.8;
+    }
+    .imp strong { color: #666; }
+    .imp a { color: #999; }
+
+    .footer-cr {
+      font-size: 12px;
+      color: #bbb;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* ── COOKIE BANNER ── */
+    .cookie-banner {
+      position: fixed;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #E5E0D8;
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.12);
+      padding: 22px 26px;
+      display: none;
+      z-index: 100;
+      font-size: 13.5px;
+      color: #444;
+      line-height: 1.65;
+    }
+    .cookie-banner.show { display: block; animation: cookieIn .3s ease-out; }
+    @keyframes cookieIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .cookie-banner strong {
+      display: block;
+      color: #1C1C1C;
+      font-size: 14.5px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .cookie-banner a {
+      color: #2E5E3E;
+      border-bottom: 1px solid #2E5E3E;
+    }
+    .cookie-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-cookie {
+      padding: 10px 22px;
+      border: none;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s, opacity .2s;
+    }
+    .btn-cookie-primary { background: #2E5E3E; color: #fff; }
+    .btn-cookie-primary:hover { background: #245032; }
+    .btn-cookie-secondary {
+      background: transparent;
+      color: #555;
+      border: 1.5px solid #DDD8D0;
+    }
+    .btn-cookie-secondary:hover { border-color: #999; }
+
+    /* ── PRIVACY MODAL ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(28,28,28,.55);
+      z-index: 200;
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 20px;
+      overflow-y: auto;
+    }
+    .modal-overlay.show { display: flex; }
+    .modal {
+      background: #FAF8F5;
+      border-radius: 12px;
+      max-width: 760px;
+      width: 100%;
+      padding: 48px 56px;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+    }
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: transparent;
+      font-size: 22px;
+      color: #999;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background .2s, color .2s;
+    }
+    .modal-close:hover { background: #ECE7DD; color: #1C1C1C; }
+    .modal h2 {
+      font-family: 'Lora', serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: #1C1C1C;
+      margin-bottom: 8px;
+    }
+    .modal h3 {
+      font-family: 'Lora', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1C1C1C;
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
+    .modal p, .modal li {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .modal ul { padding-left: 20px; margin-bottom: 10px; }
+    .modal a { color: #2E5E3E; border-bottom: 1px solid #2E5E3E; }
+    .modal-meta {
+      font-size: 12.5px;
+      color: #999;
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      color: #999;
+      margin-top: 4px;
+    }
+    .footer-links button {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #999;
+      font-family: inherit;
+      font-size: inherit;
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-color: #ddd;
+      text-underline-offset: 3px;
+    }
+    .footer-links button:hover { color: #2E5E3E; text-decoration-color: #2E5E3E; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      nav { padding: 20px 24px; }
+      .hero { padding: 48px 24px 72px; }
+      .about { padding: 60px 24px; grid-template-columns: 1fr; gap: 28px; }
+      .leistungen { padding: 60px 24px; }
+      .leistungen-inner { grid-template-columns: 1fr; gap: 32px; }
+      .leistungen-grid { grid-template-columns: 1fr; }
+      .contact { padding: 60px 24px; grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { padding: 28px 24px; flex-direction: column; }
+      .footer-cr { text-align: left; }
+      .cookie-banner { left: 12px; right: 12px; bottom: 12px; padding: 18px 20px; }
+      .modal { padding: 36px 24px; }
+      .modal h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">
+    <svg class="logo-mark" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="38" height="38" rx="9" fill="#2E5E3E"/>
+      <!-- M als stilisierte Energie-Kurve -->
+      <polyline
+        points="8,27 8,14 14,20 19,11 24,20 30,14 30,27"
+        fill="none" stroke="white" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Goldener Akzentpunkt -->
+      <circle cx="30" cy="27" r="2.5" fill="#C8952A"/>
+    </svg>
+    müllers büro
+  </a>
+  <a href="#kontakt" class="nav-cta">Kontakt aufnehmen</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-label">Beratung · Energiewirtschaft · Berlin</div>
+  <h1>Andrej Müller –<br><em>Ihr Ansprechpartner</em><br>in der Energiebranche</h1>
+  <p class="hero-sub">
+    Über 20 Jahre Erfahrung in der Energiewirtschaft. Unabhängige Beratung rund um
+    Markteintritt, Vertrieb und Unternehmensentwicklung.
+  </p>
+  <a href="#kontakt" class="btn">Gespräch anfragen</a>
+</section>
+
+<hr>
+
+<section class="about">
+  <div class="section-label">Über Andrej Müller</div>
+  <div class="about-text">
+    <p>
+      Andrej Müller ist seit über 20 Jahren in der Energiewirtschaft tätig –
+      als Berater, Unternehmer und Branchenkenner. Er hat <strong>eigene Unternehmen gegründet</strong>
+      und Startups sowie etablierte Akteure dabei begleitet, <strong>erfolgreich in den Markt einzutreten</strong>
+      und zu wachsen.
+    </p>
+    <p>
+      Über müllers büro arbeitet er heute unabhängig –
+      für Versorger, Netzbetreiber, Investoren und neue Marktteilnehmer, die von
+      seiner Erfahrung und seinem Netzwerk profitieren möchten.
+    </p>
+  </div>
+</section>
+
+<hr>
+
+<section class="leistungen" id="leistungen">
+  <div class="leistungen-inner">
+    <div class="section-label">Angebot</div>
+    <div class="leistungen-grid">
+      <div class="litem">
+        <div class="litem-title">Markteintritt</div>
+        <p class="litem-text">Strategie, Positionierung und Umsetzungsbegleitung für neue Marktteilnehmer in der Energiebranche.</p>
+      </div>
+      <div class="litem">
+        <div class="litem-title">Beratung</div>
+        <p class="litem-text">Strategische und operative Beratung – von der Analyse bis zur Entscheidungsvorlage.</p>
+      </div>
+      <div class="litem">
+        <div class="litem-title">Vertriebsaufbau</div>
+        <p class="litem-text">Aufbau und Entwicklung von Vertriebsstrukturen, Partnernetzwerken und Kundenbeziehungen.</p>
+      </div>
+      <div class="litem">
+        <div class="litem-title">Schulungen</div>
+        <p class="litem-text">Inhouse-Schulungen und Workshops für Teams zu Markt, Regulierung und Energiethemen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="contact-info">
+    <h2>Gespräch<br>vereinbaren</h2>
+    <p>Das erste Gespräch ist unverbindlich und kostenfrei. Ich melde mich innerhalb von 24 Stunden.</p>
+    <div class="contact-detail">
+      <div class="cd-item">
+        <div class="cd-label">E-Mail</div>
+        <div class="cd-value"><a href="mailto:am@muellers-buero.online">am@muellers-buero.online</a></div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-label">Standort</div>
+        <div class="cd-value">Karlsruher Straße 23, 10711 Berlin</div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-label">Unternehmen</div>
+        <div class="cd-value">müllers büro – Andrej Müller</div>
+      </div>
+    </div>
+  </div>
+
+  <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqengonq" method="POST">
+    <div class="form-row">
+      <div class="fg">
+        <label for="fn">Vorname</label>
+        <input type="text" id="fn" name="vorname" placeholder="Max">
+      </div>
+      <div class="fg">
+        <label for="ln">Nachname</label>
+        <input type="text" id="ln" name="nachname" placeholder="Mustermann">
+      </div>
+    </div>
+    <div class="fg">
+      <label for="em">E-Mail *</label>
+      <input type="email" id="em" name="email" placeholder="max@firma.de" required>
+    </div>
+    <div class="fg">
+      <label for="co">Unternehmen</label>
+      <input type="text" id="co" name="unternehmen" placeholder="Musterfirma GmbH">
+    </div>
+    <div class="fg">
+      <label for="tp">Thema</label>
+      <select id="tp" name="thema">
+        <option value="">Bitte auswählen …</option>
+        <option>Markteintritt</option>
+        <option>Beratung</option>
+        <option>Vertriebsaufbau</option>
+        <option>Schulung / Workshop</option>
+        <option>Sonstiges</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label for="msg">Nachricht</label>
+      <textarea id="msg" name="nachricht" placeholder="Kurze Beschreibung Ihres Anliegens …"></textarea>
+    </div>
+    <!-- Honeypot gegen Spam-Bots -->
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <button type="submit" class="btn-form" id="fsub">Anfrage absenden</button>
+  </form>
+</section>
+
+<footer>
+  <div class="imp">
+    <strong>Impressum</strong><br>
+    müllers büro – Andrej Müller<br>
+    Karlsruher Straße 23, 10711 Berlin ·
+    <a href="mailto:am@muellers-buero.online">am@muellers-buero.online</a><br>
+    USt-IdNr.: DE323719798<br>
+    Verantwortlich für journalistisch-redaktionelle Inhalte gem. § 18 Abs. 2 MStV: Andrej Müller, Karlsruher Straße 23, 10711 Berlin
+  </div>
+  <div>
+    <div class="footer-cr">&copy; 2026 müllers büro</div>
+    <div class="footer-links">
+      <button type="button" onclick="openPrivacy()">Datenschutz</button>
+      <button type="button" onclick="openCookieBanner()">Cookie-Einstellungen</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ── COOKIE BANNER ── -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie-Hinweis">
+  <strong>Hinweis zur Datenverarbeitung</strong>
+  Diese Website setzt keine Tracking-Cookies und bindet keine externen Dienste ein.
+  Lediglich Ihre Bestätigung dieses Hinweises wird lokal in Ihrem Browser gespeichert.
+  Details in der <a href="#" onclick="openPrivacy(); return false;">Datenschutzerklärung</a>.
+  <div class="cookie-actions">
+    <button type="button" class="btn-cookie btn-cookie-primary" onclick="acceptEssential()">Verstanden</button>
+  </div>
+</div>
+
+<!-- ── DATENSCHUTZ MODAL ── -->
+<div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+  <div class="modal">
+    <button type="button" class="modal-close" onclick="closePrivacy()" aria-label="Schließen">&times;</button>
+    <h2 id="privacyTitle">Datenschutzerklärung</h2>
+    <p class="modal-meta">Stand: Mai 2026</p>
+
+    <h3>1. Verantwortlicher</h3>
+    <p>
+      müllers büro – Andrej Müller<br>
+      Karlsruher Straße 23, 10711 Berlin<br>
+      E-Mail: <a href="mailto:am@muellers-buero.online">am@muellers-buero.online</a>
+    </p>
+
+    <h3>2. Allgemeines zur Datenverarbeitung</h3>
+    <p>
+      Wir verarbeiten personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies zur
+      Bereitstellung dieser Website sowie unserer Inhalte und Leistungen erforderlich ist.
+      Die Verarbeitung erfolgt regelmäßig nur nach Einwilligung der Nutzer (Art. 6 Abs. 1 lit. a DSGVO)
+      oder soweit eine andere Rechtsgrundlage gegeben ist (insb. Art. 6 Abs. 1 lit. b und f DSGVO).
+    </p>
+
+    <h3>3. Server-Logfiles</h3>
+    <p>
+      Beim Aufruf dieser Website werden durch unseren Hosting-Provider automatisch Informationen
+      in sogenannten Server-Logfiles gespeichert (z. B. IP-Adresse, Datum und Uhrzeit, aufgerufene Seite,
+      verwendeter Browser). Diese Daten werden zur Sicherstellung des technischen Betriebs sowie zur
+      Abwehr von Angriffen auf Grundlage unseres berechtigten Interesses (Art. 6 Abs. 1 lit. f DSGVO)
+      verarbeitet und nach kurzer Zeit gelöscht.
+    </p>
+
+    <h3>4. Kontaktformular und E-Mail-Kontakt</h3>
+    <p>
+      Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, werden die von Ihnen
+      mitgeteilten Daten (Name, E-Mail-Adresse, ggf. Unternehmen, Nachricht) zur Bearbeitung Ihrer
+      Anfrage gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertrags)
+      bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage).
+      Die Daten werden gelöscht, sobald sie zur Erreichung des Zwecks nicht mehr erforderlich sind.
+    </p>
+    <p>
+      Zur technischen Übermittlung der Formulardaten setzen wir den Dienst „Formspree“
+      (Formspree, Inc., USA) ein. Formspree nimmt die Anfrage entgegen und leitet sie per
+      E-Mail an uns weiter. Eine dauerhafte Speicherung Ihrer Daten bei Formspree erfolgt nur
+      im Rahmen der dortigen Logfiles. Mehr Informationen:
+      <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">formspree.io/legal/privacy-policy</a>.
+    </p>
+
+    <h3>5. Schriftarten</h3>
+    <p>
+      Diese Website verwendet ausschließlich lokal gehostete Schriftarten. Es findet keine
+      Übertragung an externe Anbieter (z. B. Google Fonts) statt.
+    </p>
+
+    <h3>6. Cookies und lokale Speicherung</h3>
+    <p>
+      Diese Website verwendet keine Tracking-Cookies. Im Local Storage Ihres Browsers wird
+      lediglich Ihre Bestätigung des Datenschutzhinweises gespeichert, damit dieser nicht
+      erneut erscheint. Diese Speicherung ist technisch notwendig (§ 25 Abs. 2 Nr. 2 TTDSG).
+    </p>
+
+    <h3>7. Ihre Rechte</h3>
+    <p>Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:</p>
+    <ul>
+      <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+      <li>Recht auf Berichtigung oder Löschung (Art. 16, 17 DSGVO)</li>
+      <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+      <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Recht auf Widerruf einer erteilten Einwilligung (Art. 7 Abs. 3 DSGVO)</li>
+    </ul>
+    <p>
+      Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung
+      Ihrer personenbezogenen Daten zu beschweren (Art. 77 DSGVO). Zuständig ist die Berliner
+      Beauftragte für Datenschutz und Informationsfreiheit, Friedrichstr. 219, 10969 Berlin.
+    </p>
+
+    <h3>8. Kontakt für Datenschutzanfragen</h3>
+    <p>
+      Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten oder zur
+      Geltendmachung Ihrer Rechte wenden Sie sich an:
+      <a href="mailto:am@muellers-buero.online">am@muellers-buero.online</a>.
+    </p>
+  </div>
+</div>
+
+<script>
+  // Kontaktformular: Async-Submit an Formspree (oder kompatiblen Endpunkt)
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = document.getElementById('fsub');
+
+    btn.textContent = 'Wird gesendet …';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        btn.textContent = '✓ Anfrage gesendet – ich melde mich bald!';
+        btn.style.background = '#1a4028';
+        form.reset();
+      } else {
+        throw new Error('Server-Fehler');
+      }
+    } catch (err) {
+      btn.textContent = '✗ Fehler – bitte per E-Mail kontaktieren';
+      btn.style.background = '#8a3030';
+      btn.disabled = false;
+    }
+  });
+
+  // Cookie-Banner
+  const COOKIE_KEY = 'mb_cookie_consent';
+  const banner = document.getElementById('cookieBanner');
+
+  function showBanner() { banner.classList.add('show'); }
+  function hideBanner() { banner.classList.remove('show'); }
+
+  function acceptAll() {
+    try { localStorage.setItem(COOKIE_KEY, 'all'); } catch(e) {}
+    hideBanner();
+  }
+  function acceptEssential() {
+    try { localStorage.setItem(COOKIE_KEY, 'essential'); } catch(e) {}
+    hideBanner();
+  }
+  function openCookieBanner() { showBanner(); }
+
+  // Beim Laden prüfen, ob Auswahl schon getroffen wurde
+  (function() {
+    let consent = null;
+    try { consent = localStorage.getItem(COOKIE_KEY); } catch(e) {}
+    if (!consent) showBanner();
+  })();
+
+  // Datenschutz-Modal
+  const modal = document.getElementById('privacyModal');
+  function openPrivacy() {
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePrivacy() {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closePrivacy();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('show')) closePrivacy();
+  });
+</script>
+</body>
+</html>
